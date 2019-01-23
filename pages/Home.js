@@ -48,11 +48,13 @@ export default class Home extends Component {
                     alp = x.name[0].toUpperCase();
                     dataPro = [];
                     dataPro.push({
-                        title: x.name
+                        title: x.name,
+                        relative_path: x.relative_path
                     });
                 }else{
                     dataPro.push({
-                        title: x.name
+                        title: x.name,
+                        relative_path: x.relative_path
                     });
                 }
                 if(idx+1 == responseJson.length){
@@ -111,7 +113,8 @@ export default class Home extends Component {
                         kl.push(
                         <ListItem button={true}
                         onPress={() => this.props.navigation.navigate('Surah', {
-                            reciter: x.title
+                            reciter: x.title,
+                            relative_path: x.relative_path
                           })}>
                         <Text>{x.title}</Text>
                         </ListItem>
